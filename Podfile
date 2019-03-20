@@ -6,6 +6,11 @@ target 'NY_Articles' do
   use_frameworks!
     pod 'R.swift'
     pod 'moa'
+    pod 'Alamofire'
+    pod 'NVActivityIndicatorView'
+    pod 'PromiseKit'
+    pod 'WeaverDI'
+
   # Pods for NY_Articles
 
   target 'NY_ArticlesTests' do
