@@ -10,7 +10,8 @@ target 'NY_Articles' do
     pod 'Alamofire'
     pod 'NVActivityIndicatorView'
     pod 'PromiseKit'
-
+    pod 'RxSwift'
+    pod 'RxCocoa'
   # Pods for NY_Articles
 
   target 'NY_ArticlesTests' do

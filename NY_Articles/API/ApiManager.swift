@@ -11,11 +11,9 @@ import PromiseKit
 import Alamofire
 
 class ApiManager<T : BaseModel>{
-    
-    
-    func getetRequest()-> Promise<T>{
+    func getetRequest(action:APIConstants.ApiActions)-> Promise<T>{
         return Promise{ seal in
-            Alamofire.request(API.baseUrl+API.API_KEY).validate().responseData{ (response) in
+            Alamofire.request(APIConstants.baseUrl+APIConstants.version+action.rawValue+APIConstants.API_KEY).validate().responseData{ (response) in
                 switch response.result{
                 case .failure(let e):
                     seal.reject(e)
@@ -30,12 +28,23 @@ class ApiManager<T : BaseModel>{
             }
         }
     }
-}
-
-
-enum APIError : Error{
-    case invaild_response
-    
-    
-    
+   /* func getetRequest(action:APIConstants.ApiActions)-> Promise<T>{
+        return Promise{ seal in
+            
+            Alamofire.request(URL(string: APIConstants.baseUrl+APIConstants.version+action.rawValue+APIConstants.API_KEY), method:  rType, parameters: paraneters, encoding: URLEncoding.default, headers: headers)
+            Alamofire.request().validate().responseData{ (response) in
+                switch response.result{
+                case .failure(let e):
+                    seal.reject(e)
+                case .success(let data):
+                    let jsonDecoder = JSONDecoder()
+                    if let responseModel = try? jsonDecoder.decode(T.self, from: data) {
+                        seal.fulfill(responseModel)
+                    }else{
+                        seal.reject(NSError(domain: "", code: response.response?.statusCode ?? 400, userInfo: nil))
+                    }
+                }
+            }
+        }
+    }*/
 }

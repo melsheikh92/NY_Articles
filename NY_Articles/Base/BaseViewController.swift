@@ -10,5 +10,22 @@ import Foundation
 import UIKit
 class BaseViewController : UIViewController , Routable {
     
+    override func viewDidLoad() {
     
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        
+    }
+    
+    
+    func showLoading(){
+        LoadingHelper.shared.showLoading()
+    }
+    
+    func hideLoading(){
+        LoadingHelper.shared.hideLoading()
+    }
 }
