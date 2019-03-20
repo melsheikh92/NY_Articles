@@ -4,12 +4,12 @@
 target 'NY_Articles' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-    pod 'R.swift'
+  
+   pod 'R.swift'
     pod 'moa'
     pod 'Alamofire'
     pod 'NVActivityIndicatorView'
     pod 'PromiseKit'
-    pod 'WeaverDI'
 
   # Pods for NY_Articles
 
