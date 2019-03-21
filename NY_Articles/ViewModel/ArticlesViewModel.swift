@@ -16,7 +16,7 @@ class ArticlesViewModel{
     let msgSubj = BehaviorRelay<String>(value: "")
     
     
-    func loadArticles() {
+    func loadArticles(completion:(()->Void)? = nil) {
         isLoading.accept(true)
         let manger:ApiManager<ArticlesResponse> = ApiManager()
         manger.getRequest(action: .articles).done { (response) in
@@ -27,6 +27,7 @@ class ArticlesViewModel{
                 return
             }
             self.articlesSubj.accept(articles)
+            completion?()
             }.catch { (e) in
                 print(e)
                 self.msgSubj.accept("fail loading data")
