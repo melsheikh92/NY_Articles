@@ -8,24 +8,20 @@
 
 import Foundation
 import UIKit
+import SVProgressHUD
+import TTGSnackbar
 class BaseViewController : UIViewController , Routable {
     
-    override func viewDidLoad() {
-    
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        
-    }
-    
-    
     func showLoading(){
-        LoadingHelper.shared.showLoading()
+        SVProgressHUD.show()
     }
     
     func hideLoading(){
-        LoadingHelper.shared.hideLoading()
+        SVProgressHUD.dismiss()
+        
+    }
+    func showSneakBar(_ msg:String){
+        let snackbar = TTGSnackbar(message: msg, duration: .middle)
+        snackbar.show()
     }
 }

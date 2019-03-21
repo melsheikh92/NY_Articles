@@ -9,6 +9,13 @@
 import UIKit
 
 class ArticleCell: UITableViewCell {
+    
+    @IBOutlet weak var img: RoundedImage!
+    @IBOutlet weak var tiitle: UILabel!
+    @IBOutlet weak var subTitle: UILabel!
+    @IBOutlet weak var datelbl: UILabel!
+    @IBOutlet weak var section: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

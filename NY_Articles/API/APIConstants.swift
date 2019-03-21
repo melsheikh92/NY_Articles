@@ -10,7 +10,7 @@ import Foundation
 
 
 struct APIConstants {
-    static let baseUrl = "http://api.nytimes.com/svc/mostpopular/";
+    static let baseUrl = "https://api.nytimes.com/svc/mostpopular/";
     static let  API_KEY = "?api-key=FqKkAvkmwygbm6LtlQXRwSccIHDkiatW";
     static let version = "v2"
     enum ApiActions  : String{

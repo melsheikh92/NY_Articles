@@ -8,10 +8,12 @@ target 'NY_Articles' do
    pod 'R.swift'
     pod 'moa'
     pod 'Alamofire'
-    pod 'NVActivityIndicatorView'
     pod 'PromiseKit'
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'SVProgressHUD'
+    pod 'RxDataSources', '~> 3.0'
+    pod 'TTGSnackbar'
   # Pods for NY_Articles
 
   target 'NY_ArticlesTests' do

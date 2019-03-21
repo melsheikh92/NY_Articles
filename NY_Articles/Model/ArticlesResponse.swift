@@ -18,7 +18,6 @@ class ArticlesResponse : BaseModel{
         try super.init(from: decoder)
         let values = try decoder.container(keyedBy: ResKeys.self)
         results = try values.decodeIfPresent([Article].self, forKey: .results)
-
     }
     
     

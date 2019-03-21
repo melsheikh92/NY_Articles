@@ -11,7 +11,6 @@ class BaseModel:  Codable {
     let status : String?
     let copyright : String?
     let num_results : Int?
-    
     enum CodingKeys: String, CodingKey {
         
         case status = "status"

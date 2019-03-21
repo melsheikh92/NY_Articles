@@ -11,7 +11,7 @@ import PromiseKit
 import Alamofire
 
 class ApiManager<T : BaseModel>{
-    func getetRequest(action:APIConstants.ApiActions)-> Promise<T>{
+    func getRequest(action:APIConstants.ApiActions)-> Promise<T>{
         return Promise{ seal in
             Alamofire.request(APIConstants.baseUrl+APIConstants.version+action.rawValue+APIConstants.API_KEY).validate().responseData{ (response) in
                 switch response.result{
