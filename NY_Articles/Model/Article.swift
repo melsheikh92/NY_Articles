@@ -26,6 +26,7 @@ struct Article : Codable {
 	let id : Int?
 	let asset_id : Int?
 	let views : Int?
+	let media : [Media]?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -42,7 +43,7 @@ struct Article : Codable {
 		case id = "id"
 		case asset_id = "asset_id"
 		case views = "views"
-	
+		case media = "media"
 	}
 
 	init(from decoder: Decoder) throws {
@@ -60,7 +61,7 @@ struct Article : Codable {
 		id = try values.decodeIfPresent(Int.self, forKey: .id)
 		asset_id = try values.decodeIfPresent(Int.self, forKey: .asset_id)
 		views = try values.decodeIfPresent(Int.self, forKey: .views)
-	
+		media = try values.decodeIfPresent([Media].self, forKey: .media)
 	}
 
 }

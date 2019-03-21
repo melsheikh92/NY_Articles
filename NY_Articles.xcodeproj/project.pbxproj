@@ -21,7 +21,6 @@
 		1E3883EC224191B7000E4375 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3883EA224191B7000E4375 /* BaseModel.swift */; };
 		1E3883ED224191B7000E4375 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3883EA224191B7000E4375 /* BaseModel.swift */; };
 		1E3883EF224195B8000E4375 /* NVActivityIndicatorViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3883EE224195B8000E4375 /* NVActivityIndicatorViewHelper.swift */; };
-		1E3883F1224199BE000E4375 /* ColorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3883F0224199BE000E4375 /* ColorResource.swift */; };
 		1E3883FB2241B676000E4375 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3883F72241B676000E4375 /* Article.swift */; };
 		1E3883FC2241B676000E4375 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3883F72241B676000E4375 /* Article.swift */; };
 		1E3883FD2241B676000E4375 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3883F72241B676000E4375 /* Article.swift */; };
@@ -80,7 +79,6 @@
 		1E3883E522419171000E4375 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		1E3883EA224191B7000E4375 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		1E3883EE224195B8000E4375 /* NVActivityIndicatorViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorViewHelper.swift; sourceTree = "<group>"; };
-		1E3883F0224199BE000E4375 /* ColorResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorResource.swift; sourceTree = "<group>"; };
 		1E3883F72241B676000E4375 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		1E3883F82241B676000E4375 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		1E3883F92241B676000E4375 /* Media-metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Media-metadata.swift"; sourceTree = "<group>"; };
@@ -219,7 +217,6 @@
 		1E3883E422418977000E4375 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
-				1E3883F0224199BE000E4375 /* ColorResource.swift */,
 				1E66CA7D224376A000B40AEC /* UIView.swift */,
 			);
 			path = Extentions;
@@ -489,7 +486,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -622,7 +619,6 @@
 				059A0D3E2242475000AA3063 /* R.generated.swift in Sources */,
 				1E3884082241B7A7000E4375 /* ArticlesResponse.swift in Sources */,
 				1EB9B3962241844800596370 /* AppDelegate.swift in Sources */,
-				1E3883F1224199BE000E4375 /* ColorResource.swift in Sources */,
 				1E66CA7E224376A000B40AEC /* UIView.swift in Sources */,
 				1E66CA7F224378A700B40AEC /* ApiManager.swift in Sources */,
 				1E3883E122418893000E4375 /* APIConstants.swift in Sources */,
