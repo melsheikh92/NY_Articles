@@ -30,16 +30,6 @@ class NY_ArticlesTests: XCTestCase {
         XCTAssertTrue(SVProgressHUD.isVisible())
     }
     
-    func testTableViewData()  {
-        
-        vc.viewModel.loadArticles()
-        waitForExpectations(timeout: 2, handler: { (e) in
-            XCTAssertTrue(self.vc.articlesTableview.numberOfSections == 1)
-            XCTAssertTrue(self.vc.articlesTableview.numberOfRows(inSection: 0) > 0)
-
-        })
-        
-    }
     
     override func tearDown() {
         

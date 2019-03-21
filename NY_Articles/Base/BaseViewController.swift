@@ -12,6 +12,9 @@ import SVProgressHUD
 import TTGSnackbar
 class BaseViewController : UIViewController , Routable {
     
+    override func viewDidLoad() {
+        SVProgressHUD.setDefaultStyle(.dark)
+    }
     func showLoading(){
         SVProgressHUD.show()
     }

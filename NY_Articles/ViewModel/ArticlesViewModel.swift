@@ -31,6 +31,7 @@ class ArticlesViewModel{
             }.catch { (e) in
                 print(e)
                 self.msgSubj.accept("fail loading data")
+                self.isLoading.accept(false)
         }
     }
 }

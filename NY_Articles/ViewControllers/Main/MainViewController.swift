@@ -86,6 +86,7 @@ class MainViewController: BaseViewController {
             cell.subTitle.text = model.keywords
             
             }.disposed(by: disposeBag)
+        
         //handling cell click action
         articlesTableview.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
             
@@ -93,6 +94,13 @@ class MainViewController: BaseViewController {
                 return
             }
             self?.viewModel.msgSubj.accept("selected cell has title : " + selectedCellModel.title!)
+           
+            
+            if let detailsVC = R.storyboard.main.detailsVC(){
+            detailsVC.article = self?.viewModel.articlesSubj.value[indexPath.row]
+            self?.startController(vc:detailsVC,prsentation: .push)
+            }
+            
         }).disposed(by: disposeBag)
         
     }
