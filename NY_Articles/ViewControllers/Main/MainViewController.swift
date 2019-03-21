@@ -15,20 +15,35 @@ class MainViewController: BaseViewController {
     
     @IBOutlet weak var articlesTableview: UITableView!
     
+    let refreshControl:UIRefreshControl = UIRefreshControl()
+    
     let viewModel :ArticlesViewModel = ArticlesViewModel()
     let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableCells()
+        initResfreshControl()
         bindArticlesTableview()
         bindLoading()
         bindSneakBar()
         viewModel.loadArticles()
-    
+        
     }
     
     func registerTableCells(){
         articlesTableview.register(R.nib.articleCell)
+    }
+    
+    func initResfreshControl(){
+        
+        refreshControl.addTarget(self, action: #selector(refreshViewController), for: .valueChanged)
+        self.articlesTableview.refreshControl = self.refreshControl
+        
+    }
+    
+    @objc func refreshViewController(){
+        self.viewModel.loadArticles()
     }
     
     //handle loading
@@ -41,8 +56,11 @@ class MainViewController: BaseViewController {
                 self.showLoading()
             }else {
                 self.hideLoading()
+                if(self.refreshControl.isRefreshing){
+                    self.refreshControl.endRefreshing()
+                }
             }
-        }.disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
     }
     //inistalize subscription to show msgs to users
     func bindSneakBar(){
@@ -52,8 +70,8 @@ class MainViewController: BaseViewController {
             guard let msg = event.element else {
                 return
             }
-           self.showSneakBar(msg)
-        }.disposed(by: disposeBag)
+            self.showSneakBar(msg)
+            }.disposed(by: disposeBag)
     }
     
     func bindArticlesTableview(){
@@ -67,16 +85,16 @@ class MainViewController: BaseViewController {
             cell.datelbl.text = model.published_date
             cell.subTitle.text = model.keywords
             
-        }.disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
         //handling cell click action
         articlesTableview.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
-
+            
             guard let  selectedCellModel =  self?.viewModel.articlesSubj.value[indexPath.row] else{
                 return
             }
             self?.viewModel.msgSubj.accept("selected cell has title : " + selectedCellModel.title!)
         }).disposed(by: disposeBag)
-
+        
     }
     
 }

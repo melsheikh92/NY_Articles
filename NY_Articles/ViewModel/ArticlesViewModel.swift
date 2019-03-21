@@ -21,7 +21,7 @@ class ArticlesViewModel{
         let manger:ApiManager<ArticlesResponse> = ApiManager()
         manger.getRequest(action: .articles).done { (response) in
             self.isLoading.accept(false)
-            self.msgSubj.accept("Api called Successfully")
+            self.msgSubj.accept("data loaded successfully")
 
             guard let articles = response.results else {
                 return
@@ -29,7 +29,7 @@ class ArticlesViewModel{
             self.articlesSubj.accept(articles)
             }.catch { (e) in
                 print(e)
-                self.msgSubj.accept("Fail loading data")
+                self.msgSubj.accept("fail loading data")
         }
     }
 }

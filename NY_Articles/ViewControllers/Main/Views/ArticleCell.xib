@@ -34,21 +34,21 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="AJq-tt-5y2"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWo-lf-gg5">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWo-lf-gg5">
                         <rect key="frame" x="85" y="56" width="324" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="P0k-vB-lSs"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="TxD-zx-oUx">
-                        <rect key="frame" x="434" y="52" width="20" height="20"/>
+                        <rect key="frame" x="429" y="52" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="d3m-hg-ql8"/>
                             <constraint firstAttribute="height" constant="20" id="hfN-RE-r9q"/>
@@ -95,7 +95,7 @@
                     <constraint firstItem="44I-rc-coK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="MBd-tc-rk3"/>
                     <constraint firstItem="5ZY-7Y-ZMw" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="5" id="VP5-oM-5YM"/>
                     <constraint firstItem="oG0-zn-Qbz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="65" id="dZf-uV-3A8"/>
-                    <constraint firstAttribute="trailing" secondItem="TxD-zx-oUx" secondAttribute="trailing" constant="5" id="fQu-hM-2GE"/>
+                    <constraint firstAttribute="trailing" secondItem="TxD-zx-oUx" secondAttribute="trailing" constant="10" id="fQu-hM-2GE"/>
                     <constraint firstItem="5ZY-7Y-ZMw" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="5" id="foL-sH-Au7"/>
                     <constraint firstItem="QWo-lf-gg5" firstAttribute="top" secondItem="lhh-iG-XDw" secondAttribute="bottom" constant="5" id="hNu-MS-OBV"/>
                     <constraint firstItem="lhh-iG-XDw" firstAttribute="leading" secondItem="44I-rc-coK" secondAttribute="trailing" constant="15" id="ijY-d3-wqh"/>
@@ -116,7 +116,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="arrow" width="24" height="24"/>
-        <image name="calendar" width="23" height="23"/>
+        <image name="arrow" width="12" height="12"/>
+        <image name="calendar" width="11" height="11"/>
     </resources>
 </document>
