@@ -14,10 +14,10 @@ import SVProgressHUD
 
 class NY_ArticlesTests: XCTestCase {
     
-    let vc = MainViewController()
+    var vc :MainViewController!
     
     override func setUp() {
-        
+        vc = MainViewController()
         
     }
     
@@ -32,6 +32,6 @@ class NY_ArticlesTests: XCTestCase {
     
     
     override func tearDown() {
-        
+        vc = nil
     }
 }

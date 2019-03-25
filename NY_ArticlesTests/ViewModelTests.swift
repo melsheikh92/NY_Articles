@@ -13,10 +13,10 @@ import PromiseKit
 
 class ViewModelTests: XCTestCase {
     
-    let viewmodel = ArticlesViewModel()
+    var viewmodel :ArticlesViewModel!
     
     override func setUp() {
-        
+        viewmodel = ArticlesViewModel()
     }
     
     func testCheckLoading(){
@@ -47,6 +47,6 @@ class ViewModelTests: XCTestCase {
     }
     
     override func tearDown() {
-        
+        viewmodel = nil
     }
 }
