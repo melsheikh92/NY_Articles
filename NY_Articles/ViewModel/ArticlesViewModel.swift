@@ -9,16 +9,17 @@
 import Foundation
 import RxCocoa
 import PromiseKit
-class ArticlesViewModel{
+class ArticlesViewModel: BaseViewModel {
     
     let articlesSubj = BehaviorRelay<[Article]>(value: [Article]())
-    let isLoading = BehaviorRelay<Bool>(value: false)
-    let msgSubj = BehaviorRelay<String>(value: "")
+    let manger: ApiManager<ArticlesResponse>
     
-    
+    init(manger: ApiManager<ArticlesResponse>) {
+        self.manger = manger
+    }
+   
     func loadArticles(completion:(()->Void)? = nil) {
         isLoading.accept(true)
-        let manger:ApiManager<ArticlesResponse> = ApiManager()
         manger.getRequest(action: .articles).done { (response) in
             self.isLoading.accept(false)
             self.msgSubj.accept("data loaded successfully")

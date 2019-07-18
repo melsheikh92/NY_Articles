@@ -18,6 +18,9 @@ pod 'RxCocoa'
 pod 'SVProgressHUD'
 pod 'RxDataSources', '~> 3.0'
 pod 'TTGSnackbar'
+pod 'Swinject'
+pod 'SwinjectStoryboard'
+
 end
 shared
   target 'NY_ArticlesTests' do

@@ -8,6 +8,9 @@
 
 import UIKit
 import moa
+import SwinjectStoryboard
+import Swinject
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -18,7 +21,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       
         //init error img for all img loading
         Moa.errorImage = R.image.calendar()
+        let container: Container = {
+            let container = Container()
+            container.register(ArticlesViewModel.self) { _ in ArticlesViewModel(manger: ApiManager<ArticlesResponse>())}
+            container.storyboardInitCompleted(MainViewController.self) { r, c in
+                c.viewModel = r.resolve(ArticlesViewModel.self)
+            }
+            return container
+        }()
         
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.makeKeyAndVisible()
+        self.window = window
+        
+        let storyboard = SwinjectStoryboard.create(name: "Main", bundle: nil, container: container)
+        window.rootViewController = storyboard.instantiateInitialViewController()
+
         return true
     }
 }

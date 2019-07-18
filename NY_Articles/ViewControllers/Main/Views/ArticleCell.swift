@@ -16,7 +16,6 @@ class ArticleCell: UITableViewCell {
     @IBOutlet weak var datelbl: UILabel!
     @IBOutlet weak var section: UILabel!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

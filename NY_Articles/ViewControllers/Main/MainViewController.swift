@@ -11,13 +11,15 @@ import RxCocoa
 import RxSwift
 import RxDataSources
 import moa
+
 class MainViewController: BaseViewController {
     
     @IBOutlet weak var articlesTableview: UITableView!
     
     let refreshControl:UIRefreshControl = UIRefreshControl()
     
-    let viewModel :ArticlesViewModel = ArticlesViewModel()
+    var viewModel: ArticlesViewModel!
+    
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -77,13 +79,13 @@ class MainViewController: BaseViewController {
     func bindArticlesTableview(){
         let obseravableListOfArticles = viewModel.articlesSubj.asObservable()
         //handling data source
-        obseravableListOfArticles.bind(to: self.articlesTableview.rx.items(cellIdentifier:  R.nib.articleCell.identifier, cellType: ArticleCell.self)){index, model , cell in
+        obseravableListOfArticles.bind(to: self.articlesTableview.rx.items(cellIdentifier: R.nib.articleCell.identifier, cellType: ArticleCell.self)){index, model , cell in
             
-            cell.img.moa.url = model.media?[0].media_metadata?[0].url 
-            cell.tiitle.text = model.title
-            cell.section.text = model.section
-            cell.datelbl.text = model.published_date
-            cell.subTitle.text = model.keywords
+            cell.img.moa.url    = model.media?[0].media_metadata?[0].url
+            cell.tiitle.text    = model.title
+            cell.section.text   = model.section
+            cell.datelbl.text   = model.published_date
+            cell.subTitle.text  = model.keywords
             
             }.disposed(by: disposeBag)
         
@@ -94,11 +96,10 @@ class MainViewController: BaseViewController {
                 return
             }
             self?.viewModel.msgSubj.accept("selected cell has title : " + selectedCellModel.title!)
-           
             
             if let detailsVC = R.storyboard.main.detailsVC(){
-            detailsVC.article = self?.viewModel.articlesSubj.value[indexPath.row]
-            self?.startController(vc:detailsVC,prsentation: .push)
+                detailsVC.article = self?.viewModel.articlesSubj.value[indexPath.row]
+                self?.startController(vc:detailsVC,prsentation: .push)
             }
             
         }).disposed(by: disposeBag)
